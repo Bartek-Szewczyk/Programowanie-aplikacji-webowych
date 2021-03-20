@@ -19,9 +19,11 @@ const admins: Person[] = [
 
 function logPerson(person: Person) {
 // TODO: dodać wypisywanie na konsoli danych osoby: "imię nazwisko, wiek, rola"
+console.log(person.name, person.surname, person.age, person.role)
 }
 
 function filterPersons(persons: Person[], criteria: any): Person[] {
+    return null;
 // TODO: zaimplementować funkcję, która przefiltruje tablicę persons za pomocą predykatu criteria
 }
 
