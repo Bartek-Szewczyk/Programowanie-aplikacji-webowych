@@ -29,6 +29,12 @@ function filterPersons(persons: Person[], criteria: any): Person[] {
 
 // TODO:
 // 1. Przy pomocy funkcji logPerson wypisać osoby z tablicy users i admins (patrz foreach)
+console.log( users.forEach(logPerson));
+console.log(admins.forEach(logPerson));
 // 2. Złączyć tablice users i admins i wypisać zawartość złączonej tablicy na konsoli (patrz operator spread)
+const newtab =[ ...users, ...admins];
+console.log(newtab);
 // 3. Wypisać osoby powyżej 25 lat (patrz operator filter)
+const filter25age = newtab.filter((p)=>p.age>25);
+console.log(filter25age.forEach(logPerson));
 // 4. Wypisać osoby o imieniu Adam (zaimplementować funkcję filterPersons) -> const filtered = filterPersons(persons, { name: 'Adam' });
