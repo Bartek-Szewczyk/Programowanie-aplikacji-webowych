@@ -23,7 +23,9 @@ console.log(person.name, person.surname, person.age, person.role)
 }
 
 function filterPersons(persons: Person[], criteria: any): Person[] {
-    return null;
+    
+    let filteredP = persons.filter((p)=>p ==criteria); // nie działa 
+    return filteredP;
 // TODO: zaimplementować funkcję, która przefiltruje tablicę persons za pomocą predykatu criteria
 }
 
@@ -38,3 +40,5 @@ console.log(newtab);
 const filter25age = newtab.filter((p)=>p.age>25);
 console.log(filter25age.forEach(logPerson));
 // 4. Wypisać osoby o imieniu Adam (zaimplementować funkcję filterPersons) -> const filtered = filterPersons(persons, { name: 'Adam' });
+const filtered = filterPersons(newtab, { name: 'Adam' });
+console.log(filtered);
