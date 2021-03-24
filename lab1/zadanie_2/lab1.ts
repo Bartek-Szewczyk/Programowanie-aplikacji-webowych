@@ -24,8 +24,14 @@ console.log(person.name, person.surname, person.age, person.role)
 
 function filterPersons(persons: Person[], criteria: any): Person[] {
     
-    let filteredP = persons.filter((p)=>p ==criteria); // nie działa 
+    let filteredP = persons.filter((p)=> {
+        let criteriaKeys = Object.keys(criteria) as (keyof Person)[];
+        return criteriaKeys.every((fieldName) => {
+            return p[fieldName]===criteria[fieldName];
+        })
+    }); 
     return filteredP;
+    
 // TODO: zaimplementować funkcję, która przefiltruje tablicę persons za pomocą predykatu criteria
 }
 
