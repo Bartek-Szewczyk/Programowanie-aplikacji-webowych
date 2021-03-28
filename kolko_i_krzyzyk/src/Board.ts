@@ -23,13 +23,14 @@ export class Board {
     }
 
     makeMove(cell: Cell): void {
- cell.setCellValue(this.currentSymbol);
-    if (this.currentSymbol==1) {
-        this.currentSymbol = -1;
-    }else{
-        this.currentSymbol = 1;
-    }
-  
+    if (cell.cellValue==0) {
+        cell.setCellValue(this.currentSymbol);
+        if (this.currentSymbol==1) {
+            this.currentSymbol = -1;
+           }else if (this.currentSymbol== -1){
+            this.currentSymbol = 1;
+           }
+     }
  };
 
 }
