@@ -1,10 +1,11 @@
 import { Cell } from "./Cell";
 export class Board {
     cells: Cell[];
-    //currentSymbol: number;
+    currentSymbol: number;
     
     constructor(size: number) {
         this.cells = new Array(size);
+        this.currentSymbol = 1;
         let table = <HTMLTableElement>document.getElementById("tictactoe");
         let i = 0;
         for (let r = 0; r < size; r++) {
@@ -22,7 +23,13 @@ export class Board {
     }
 
     makeMove(cell: Cell): void {
- //cell.setCellValue(this.currentSymbol);
+ cell.setCellValue(this.currentSymbol);
+    if (this.currentSymbol==1) {
+        this.currentSymbol = -1;
+    }else{
+        this.currentSymbol = 1;
+    }
+  
  };
 
 }
