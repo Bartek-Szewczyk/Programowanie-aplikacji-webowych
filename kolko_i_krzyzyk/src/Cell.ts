@@ -1,5 +1,5 @@
 export class Cell {
-    cellValue!: number;
+    cellValue: number;
     htmlElement: HTMLElement;
 
     constructor(cell: HTMLElement) {

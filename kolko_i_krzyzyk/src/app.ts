@@ -1,3 +1,3 @@
 import { Board } from "./Board";
 
-let board = new Board(3);
+let board = new Board(5);
