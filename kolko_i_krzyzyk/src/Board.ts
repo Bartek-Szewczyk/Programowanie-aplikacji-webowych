@@ -5,10 +5,10 @@ export class Board {
     cells: Cell[];
     currentSymbol: number;
     
+
     constructor(size: number) {
         this.cells = new Array(size);
         this.currentSymbol = 1;
-        
 
         let table = <HTMLTableElement>document.getElementById("tictactoe");
         let i = 0;
@@ -19,7 +19,6 @@ export class Board {
                 cell.className = 'cell';
                 const newCell = new Cell(cell);
                 this.cells[i] = newCell;
-                cell.innerHTML=`${r.toString()} ${c.toString()}`
                 cell.addEventListener("click", () => this.makeMove(newCell), false);
                 i++;
             }  
@@ -36,7 +35,7 @@ export class Board {
                 this.currentSymbol = 1;
             }
         }
-       new Check(this.cells);
+      new Check(this.cells)
     };
 
     

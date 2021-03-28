@@ -9,6 +9,6 @@ export class Win{
             this.wygrany="Kółko"
         }
 
-   // console.log(`Wygrał: ${this.wygrany}`);
+    console.log(`Wygrał: ${this.wygrany}`);
     }
 }

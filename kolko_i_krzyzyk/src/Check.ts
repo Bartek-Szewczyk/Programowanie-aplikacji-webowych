@@ -5,20 +5,53 @@ export class Check{
     constructor(cells: Array<Cell>){
         let newCell= new Array()
         for (let i = 0; i < Math.sqrt(cells.length); i++) {
-            newCell[i]=[]
+            newCell[i]=[];
         }
+        let c=0;
         for (let i = 0; i < Math.sqrt(cells.length); i++) {
-            const el = cells[i];
             for (let j = 0; j < Math.sqrt(cells.length); j++) {
-                const e = cells[j];
-               newCell[i][j]=`${i}+${j}`;
-                
+                const el = cells[c];
+               newCell[j][i]=el;
+               c++
             }
         }
 
-        
+        let sX=0, sO=0;
+        for (let i = 0; i < newCell.length; i++) {
+             let sX=0, sO=0;
+            for (let j = 0; j < newCell.length; j++) {
+                 const el = newCell[i][j];
+            
+                if (el.cellValue == -1) {
+                    sO++;
+                }else if (el.cellValue == 1){
+                    sX++;
+                }
+                if (sX==newCell.length) {
+                    new Win(1)
+                }
+            }
+        }
 
-console.log(newCell);
+        for (let i = 0; i < newCell.length; i++) {
+             let sX=0, sO=0;
+            for (let j = 0; j < newCell.length; j++) {
+                 const el = newCell[j][i];
+            
+                if (el.cellValue == -1) {
+                    sO++;
+                }else if (el.cellValue == 1){
+                    sX++;
+                }
+                if (sX==newCell.length) {
+                    new Win(1)
+                }else if(sO==newCell.length){
+                    new Win(-1)
+                }
+            }
+        }
+
+
 
 
 
