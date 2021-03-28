@@ -16,7 +16,7 @@ export class Check{
             }
         }
 
-        let sX=0, sO=0;
+        
         for (let i = 0; i < newCell.length; i++) {
              let sX=0, sO=0;
             for (let j = 0; j < newCell.length; j++) {
@@ -29,6 +29,8 @@ export class Check{
                 }
                 if (sX==newCell.length) {
                     new Win(1)
+                }else if(sO==newCell.length){
+                    new Win(-1)
                 }
             }
         }
@@ -50,6 +52,44 @@ export class Check{
                 }
             }
         }
+        let sX=0, sO=0;
+        for (let i = 0; i < newCell.length; i++) {
+             
+                 const el = newCell[i][i];
+           
+                if (el.cellValue == -1) {
+                    sO++;
+                }else if (el.cellValue == 1){
+                    sX++;
+                }
+                if (sX==newCell.length) {
+                    new Win(1)
+                }else if(sO==newCell.length){
+                    new Win(-1)
+                }
+        }
+            let spX=0, spO=0;
+            let lp = newCell.length-1;
+         for (let i = 0; i < newCell.length ; i++) {
+             
+            // for (let j = newCell.length-1; j >=0; j--) {
+                 const el = newCell[i][lp];
+                
+                if (el.cellValue == -1) {
+                    spO++;
+                }else if (el.cellValue == 1){
+                    spX++;
+                }
+                if (spX==newCell.length) {
+                    new Win(1)
+                }else if(spO==newCell.length){
+                    new Win(-1)
+                }
+                lp--;
+           // }
+            continue;
+        }
+        
 
 
 
