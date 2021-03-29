@@ -10,10 +10,22 @@
 </head>
 
 <body>
+
     <div class="container">
+        <div id="winner" class="nonevisible">
+            <h2 id="win">winner</h2>
+            <button onClick="window.location.reload();">Restart</button>
+        </div>
+        <h1 id="current"></h1>
+        <div>
+            <label for="number">Rozmiar Planszy:</label>
+            <input type="number" id="number" name="number" min="3" max="20" value="3">
+            <button onClick="window.location.reload();">Graj</button>
+        </div>
         <table id="tictactoe">
 
         </table>
+
     </div>
 
 

@@ -23,7 +23,7 @@ export class Board {
                 i++;
             }  
         }
-       
+       this.current(this.currentSymbol)
     }
 
     makeMove(cell: Cell): void {
@@ -35,10 +35,28 @@ export class Board {
                 this.currentSymbol = 1;
             }
         }
-      new Check(this.cells)
+      new Check(this.cells);
+      this.current(this.currentSymbol);
     };
 
-    
+    current(currentSymbol: number){
+        let cr = <HTMLTableElement>document.getElementById("current");
+
+         const ximg = new Image();
+        const oimg = document.createElement("img");
+        ximg.src="../Media/x.png";
+        oimg.src="../Media/O.png";
+        ximg.classList.add("img");
+        oimg.classList.add("img");
+         cr.innerHTML="Ruch: ";
+        if (currentSymbol == 1) {
+              cr.appendChild(ximg);
+        }
+        else if (currentSymbol == -1){
+            cr.appendChild(oimg);
+        }
+      
+    }
 
 
 }

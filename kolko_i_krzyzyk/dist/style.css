@@ -22,3 +22,27 @@
 #tictactoe {
     margin-left: 45%;
 }
+
+#winner {
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+#win {
+    margin-top: 20%;
+    font-size: 50px;
+    color: white
+}
+
+.nonevisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
