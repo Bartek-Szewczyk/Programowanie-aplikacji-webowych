@@ -1,12 +1,16 @@
 import { Board } from "./Board";
 
-let inputNumber = document.getElementById("number") ;
+let inputNumber =<HTMLInputElement>document.getElementById("num") ;
+let tab= <HTMLTableElement>document.getElementById('tictactoe')
+const play = document.getElementById('play');
+
+let board;
+let num;
+
+play?.addEventListener('click', ()=>{
+    tab.innerHTML=" "
+    num =  parseInt(inputNumber.value);
+    board = new Board(num);
+})
 
 
-
-inputNumber?.addEventListener('change',()=>{
-    let num =inputNumber?.getAttribute('value')
-    console.log(num)} )
-console.log(inputNumber);
-
-let board = new Board(3);
