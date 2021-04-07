@@ -20,9 +20,12 @@ export class Win{
             this.wygrany="Krzyżyk";
             win.appendChild(ximg)
 
-        }else{
+        }else if(value == -1){
             this.wygrany="Kółko";
             win.appendChild(oimg)
+        }else{
+            this.wygrany="remis";
+            win.innerHTML="Remis"
         }
 
     console.log(`Wygrał: ${this.wygrany}`);

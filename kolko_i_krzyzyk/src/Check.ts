@@ -15,7 +15,19 @@ export class Check{
                c++
             }
         }
+        let pl=0;
 
+        for (let i = 0; i < cells.length; i++) {
+            const element = cells[i];
+            if (element.cellValue== 1 || element.cellValue == -1) {
+                pl++
+                
+            }
+            if (pl==cells.length) {
+                new Win(0);
+                
+            }
+        }
         
         for (let i = 0; i < newCell.length; i++) {
              let sX=0, sO=0;
@@ -72,7 +84,7 @@ export class Check{
             let lp = newCell.length-1;
          for (let i = 0; i < newCell.length ; i++) {
              
-            // for (let j = newCell.length-1; j >=0; j--) {
+           
                  const el = newCell[i][lp];
                 
                 if (el.cellValue == -1) {
@@ -86,7 +98,7 @@ export class Check{
                     new Win(-1)
                 }
                 lp--;
-           // }
+          
             continue;
         }
         
