@@ -14,7 +14,7 @@ export class Win{
         ximg.classList.add("img");
         oimg.classList.add("img");
 
-        win.innerHTML="Wygrył: ";
+        win.innerHTML="Wygrał: ";
 
          if (value==1) {
             this.wygrany="Krzyżyk";
