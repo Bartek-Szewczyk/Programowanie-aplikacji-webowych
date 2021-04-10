@@ -7,6 +7,7 @@ export class Win{
         let win = <HTMLTableElement>document.getElementById("win");
         let winDiv = <HTMLTableElement>document.getElementById("winner");
         winDiv.classList.add('visible')
+        console.log(winDiv);
         const ximg = new Image();
         const oimg = document.createElement("img");
         ximg.src="../Media/x.png";

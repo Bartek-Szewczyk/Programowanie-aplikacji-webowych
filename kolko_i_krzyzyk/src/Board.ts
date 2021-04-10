@@ -11,6 +11,7 @@ export class Board {
         this.currentSymbol = 1;
 
         let table = <HTMLTableElement>document.getElementById("tictactoe");
+        
         let i = 0;
         for (let r = 0; r < size; r++) {
             let row = table.insertRow(r);

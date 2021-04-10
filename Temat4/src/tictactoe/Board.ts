@@ -6,11 +6,14 @@ export class Board {
     currentSymbol: number;
     
 
-    constructor(size: number) {
+    constructor(size: number, tablee: HTMLTableElement) {
+        
         this.cells = new Array(size);
         this.currentSymbol = 1;
 
-        let table = <HTMLTableElement>document.getElementById("tictactoe");
+        let table = tablee;
+        console.log(table);
+        //<HTMLTableElement>document.getElementById("tictactoe");
         let i = 0;
         for (let r = 0; r < size; r++) {
             let row = table.insertRow(r);
@@ -40,7 +43,7 @@ export class Board {
     };
 
     current(currentSymbol: number){
-        let cr = <HTMLTableElement>document.getElementById("current");
+        let cr = <HTMLTableElement>document.getElementById('current');
 
          const ximg = new Image();
         const oimg = document.createElement("img");
