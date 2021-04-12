@@ -2,9 +2,11 @@ import { Game } from "../game.model";
 import { Board } from "./Board";
 export class TicTacToe implements Game {
     name: string;
+    iconSrc: string;
 
     constructor() {
         this.name = "Kółko i krzyżyk";
+        this.iconSrc="../Media/tictactoe.png "
         
     }
     getGameElement(): HTMLElement {
