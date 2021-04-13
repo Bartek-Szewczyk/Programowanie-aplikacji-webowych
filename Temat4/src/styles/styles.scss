@@ -1,6 +1,11 @@
 $body-color: red;
+$dark-theme: black;
 body {
     color: $body-color;
+}
+
+.gameIcon {
+    width: 50px;
 }
 
 .cell {

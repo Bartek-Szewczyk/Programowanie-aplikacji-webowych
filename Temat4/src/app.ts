@@ -25,8 +25,9 @@ class App {
             const game= gameFactory.getGame(Number(gameKind));
             const item = document.createElement('li');
             const img = document.createElement('img');
-            img.src = game.iconSrc
-            item.appendChild(img)
+            img.src = game.iconSrc;
+            img.classList.add('gameIcon');
+            item.appendChild(img);
             item.appendChild(document.createTextNode(game.name));
             item.addEventListener('click',()=>{
                 gameContainer.innerHTML="";
