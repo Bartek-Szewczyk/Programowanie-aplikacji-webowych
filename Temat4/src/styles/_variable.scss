@@ -1,0 +1,14 @@
+// $background-color: grey;
+// $primary-color: black;
+// $secondary-color: red;
+:root {
+    --background-color: grey;
+    --primary-color: black;
+    --secondary-color: red;
+}
+
+[data-theme='dark'] {
+    --background-color: red;
+    --primary-color: white;
+    --secondary-color: blue;
+}

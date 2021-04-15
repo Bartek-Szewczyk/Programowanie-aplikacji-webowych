@@ -1,0 +1,11 @@
+.menu {
+    li {
+        color: var(--primary-color);
+        &:hover {
+            text-transform: uppercase;
+        }
+    }
+    display: column;
+    max-width: 20%;
+    @include defaultBox(var(--secondary-color), 1px);
+}

@@ -12,8 +12,12 @@ class App {
     }
 
     initMenu(): void {
+        const mainContainer = <HTMLDivElement>(document.createElement('div'));
+        mainContainer.classList.add('main');
         const menuContainer = <HTMLDivElement>(document.createElement('div')); // kontener menu dostępnych gier
+        menuContainer.classList.add('menu');
         const gameContainer = <HTMLDivElement>(document.createElement('div')); // kontener główny ekranu z grą
+        gameContainer.classList.add('game');
         const list = document.createElement('ul'); // lista pozycji w menu dostępnych gier
         
         // TODO: Zaimplementuj wzorzec fabryki/metody fabrykującej, tak aby na podstawie konkretnej wartości z enum zwrócić obiekt gry. Z tego obiektu można następnie pobrać nazwę gry i dodać do menu oraz metodę zwracającą samą grę i po kliknięciu w wybrany element listy wywoływać ją, aby doklejać zawartość do gameContainer. Aby wyświetlić menu należy napisać pętlę, któta przeiteruje po wszystkich wartościach enum'a
@@ -39,8 +43,24 @@ class App {
 
 
         menuContainer.appendChild(list);
-        document.body.appendChild(menuContainer);
-        document.body.appendChild(gameContainer);
+        mainContainer.appendChild(menuContainer);
+        mainContainer.appendChild(gameContainer);
+        document.body.appendChild(mainContainer);
+
+        const switcher = <HTMLButtonElement>(document.createElement('button'));
+        switcher.classList.add('switch');
+        switcher.innerText="theme"
+        switcher.addEventListener('click', () =>{
+            if(document.body.hasAttribute('data-theme')){
+                document.body.removeAttribute('data-theme');
+            }else{
+                document.body.setAttribute('data-theme', 'dark')
+            }
+            
+        })
+
+        menuContainer.appendChild(switcher);
+
     }
 }
 
