@@ -47,17 +47,37 @@ class App {
         mainContainer.appendChild(gameContainer);
         document.body.appendChild(mainContainer);
 
-        const switcher = <HTMLButtonElement>(document.createElement('button'));
+        const switcher = <HTMLElement>(document.createElement('label'));
         switcher.classList.add('switch');
-        switcher.innerText="theme"
-        switcher.addEventListener('click', () =>{
+        const input = <HTMLInputElement>(document.createElement('input'));
+        input.type="checkbox";
+        const span = <HTMLElement>(document.createElement('span'));
+        span.classList.add('slider');
+        span.classList.add('round');
+
+        if(input.checked==true){
             if(document.body.hasAttribute('data-theme')){
+                
                 document.body.removeAttribute('data-theme');
             }else{
                 document.body.setAttribute('data-theme', 'dark')
             }
+        }
+
+        switcher.appendChild(input);
+        switcher.appendChild(span);
+
+        input.addEventListener('click', () =>{
+            if(document.body.hasAttribute('data-theme')){
+                document.body.removeAttribute('data-theme');
+            }else{
+                console.log('work');
+                document.body.setAttribute('data-theme', 'dark')
+            }
             
         })
+
+        
 
         menuContainer.appendChild(switcher);
 

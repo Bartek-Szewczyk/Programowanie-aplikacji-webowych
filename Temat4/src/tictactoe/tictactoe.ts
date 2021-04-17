@@ -11,6 +11,7 @@ export class TicTacToe implements Game {
     }
     getGameElement(): HTMLElement {
         const div = document.createElement('div');
+        div.classList.add('screen');
       const table = <HTMLTableElement>document.createElement('table');
         table.id="tictactoe";
         
@@ -37,7 +38,8 @@ export class TicTacToe implements Game {
       const restart = document.createElement('button');
       restart.innerHTML="Koniec Gry";
       restart.addEventListener("click",()=>{
-        window.location.reload();
+        div.innerHTML='';
+        this.getGameElement;
       })
 
 

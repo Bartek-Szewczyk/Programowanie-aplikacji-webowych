@@ -2,13 +2,15 @@
 // $primary-color: black;
 // $secondary-color: red;
 :root {
-    --background-color: grey;
+    --background-color: rgb(255, 255, 255);
     --primary-color: black;
     --secondary-color: red;
+    --toggle-color: rgb(70, 70, 70);
 }
 
 [data-theme='dark'] {
-    --background-color: red;
+    --background-color: rgb(70, 70, 70);
     --primary-color: white;
     --secondary-color: blue;
+    --toggle-color: rgb(255, 255, 255);
 }
