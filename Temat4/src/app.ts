@@ -71,7 +71,6 @@ class App {
             if(document.body.hasAttribute('data-theme')){
                 document.body.removeAttribute('data-theme');
             }else{
-                console.log('work');
                 document.body.setAttribute('data-theme', 'dark')
             }
             
