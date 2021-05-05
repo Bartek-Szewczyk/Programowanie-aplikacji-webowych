@@ -71,7 +71,7 @@ function forAdmin(target:object, propKey: string, descriptor: PropertyDescriptor
     descriptor.value = function(param){
        if (param.role === Role.Admin) {
            console.log('Admin');
-            return originalFn.call(this, param)
+             originalFn.call(this, param)
        }
     }
 }
@@ -80,8 +80,8 @@ function forModerator(target:object, propKey: string, descriptor: PropertyDescri
     const originalFn= target[propKey];
     descriptor.value = function(param){
        if (param.role === Role.Moderator) {
-           
-            return originalFn.call(this, param);
+           console.log('Moderator');
+             originalFn.call(this, param);
        }
        
     }
@@ -93,7 +93,9 @@ class Resource{
     constructor(){
         this.resourceValue= 'secret value'
     }
-    @forModerator
+    
+    
+    @forModerator    
     public read(user: User):void{
           console.log('I see '+ this.resourceValue);
     }
@@ -113,7 +115,7 @@ class Resource{
 
 const user1 = new StandardUser("John", "Walker");
 const user2 = new ModeratorUser("Adam", "Smith");
-const user3 = new AdminUser("Andrew", "Jonhson");
+const user3 = new AdminUser("Andrew", "Johnson");
 
 
 const res = new Resource();
