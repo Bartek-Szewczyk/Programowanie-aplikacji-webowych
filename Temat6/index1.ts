@@ -94,7 +94,6 @@ class Resource{
         this.resourceValue= 'secret value'
     }
     
-    
     @forModerator    
     public read(user: User):void{
           console.log('I see '+ this.resourceValue);
