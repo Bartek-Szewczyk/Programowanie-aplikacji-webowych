@@ -76,7 +76,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\n
   \**************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.disable = void 0;\r\nfunction disable(constructorFn) {\r\n    constructorFn.prototype.constructor.disable = true;\r\n}\r\nexports.disable = disable;\r\n\n\n//# sourceURL=webpack:///./src/decorator.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.disable = void 0;\r\nfunction disable(constructorFn) {\r\n    constructorFn.prototype.disable = true;\r\n}\r\nexports.disable = disable;\r\n\n\n//# sourceURL=webpack:///./src/decorator.ts?");
 
 /***/ }),
 
