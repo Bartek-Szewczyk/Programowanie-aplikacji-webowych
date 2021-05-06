@@ -1,20 +1,26 @@
+import { disable } from "../decorator";
 import { Game } from "../game.model";
 import { Board } from "./Board";
+
+@disable
 export class TicTacToe implements Game {
     name: string;
     iconSrc: string;
-
+    disable:boolean;
+    
     constructor() {
-        this.name = "Kółko i krzyżyk";
-        this.iconSrc="../Media/tictactoe.png "
-        
+      
+      this.name = "Kółko i krzyżyk";
+      this.iconSrc="../Media/tictactoe.png "
+      this.disable=false;
     }
+    
     getGameElement(): HTMLElement {
         const div = document.createElement('div');
         div.classList.add('screen');
       const table = <HTMLTableElement>document.createElement('table');
         table.id="tictactoe";
-        
+        console.log(this.disable);
        const rozmPlanszy = <HTMLElement>document.createElement('label');
        rozmPlanszy.innerHTML="Rozmiar Planszy: "
       let input = document.createElement('input');

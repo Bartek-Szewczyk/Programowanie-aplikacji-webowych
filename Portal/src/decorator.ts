@@ -1,5 +1,3 @@
-export function disable(target: any, name: string, descriptor: any ){
-    console.log(target)
-    console.log(name)
-    console.log(descriptor)
+export function disable(constructorFn: Function):void{
+   constructorFn.prototype.constructor.disable=true
 }

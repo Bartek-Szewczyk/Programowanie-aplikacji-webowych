@@ -3,6 +3,7 @@ import {TicTacToe} from "./tictactoe/tictactoe";
 import {Game} from "./game.model";
 import { BattleShips } from "./battleships/battleships";
 import {Games} from "./games.enum"
+
   
 export class GamesFactory implements Factory {
     getGame(game:Games): Game {
