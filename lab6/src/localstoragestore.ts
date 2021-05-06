@@ -9,11 +9,20 @@ export class LocalStorageStore implements NoteStore {
     }
     
     public addNote(note: Note): void {
-        throw new Error('Method not implemented.');
+        let notesValue= <string>localStorage.getItem('notes');
+        let notes = <Note[]>JSON.parse(notesValue)
+        if (!notes)
+            notes=[]
+        notes.push(note);
+        localStorage.setItem('notes', JSON.stringify(notes));
+        
+
     }
 
     public getNotes(): Note[] {
-        throw new Error('Method not implemented.');
+        let notesValue= <string>localStorage.getItem('notes');
+        let notes = <Note[]>JSON.parse(notesValue)
+        return notes;
     }
    
 }
