@@ -5,7 +5,15 @@ import { NoteStore } from './notestore';
 export class SessionStorageStore implements NoteStore {
 
     deleteNote(id: Guid): void {
-        throw new Error('Method not implemented.');
+        let notesValue= <string>sessionStorage.getItem('notes');
+        let notesOld = <Note[]>JSON.parse(notesValue)
+        let notesNew=[]
+        for (let note of notesOld) {
+            
+            if(note.id!==id)
+                notesNew.push(note)
+        }
+        sessionStorage.setItem('notes', JSON.stringify(notesNew));
     }
     
   public addNote(note: Note): void {
