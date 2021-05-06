@@ -8,12 +8,21 @@ export class SessionStorageStore implements NoteStore {
         throw new Error('Method not implemented.');
     }
     
-    public addNote(note: Note): void {
-        throw new Error('Method not implemented.');
+  public addNote(note: Note): void {
+        let notesValue= <string>sessionStorage.getItem('notes');
+        let notes = <Note[]>JSON.parse(notesValue)
+        if (!notes)
+            notes=[]
+        notes.push(note);
+        sessionStorage.setItem('notes', JSON.stringify(notes));
+        
+
     }
 
     public getNotes(): Note[] {
-        throw new Error('Method not implemented.');
+        let notesValue= <string>sessionStorage.getItem('notes');
+        let notes = <Note[]>JSON.parse(notesValue)
+        return notes;
     }
    
 }
