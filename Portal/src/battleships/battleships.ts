@@ -1,4 +1,4 @@
-import { disable } from "../decorator";
+import { disable, log } from "../decorator";
 import { Game } from "../game.model";
 
 export class BattleShips implements Game {
@@ -10,7 +10,7 @@ export class BattleShips implements Game {
         this.iconSrc="../Media/tictactoe.png"
         this.disable=false;
     }
-    
+    @log
     getGameElement(): HTMLElement {
         const div = document.createElement('div');
         div.appendChild(document.createTextNode("Hello BattleShips"));

@@ -1,4 +1,4 @@
-import { disable } from "../decorator";
+import { disable, log } from "../decorator";
 import { Game } from "../game.model";
 import { Board } from "./Board";
 
@@ -15,6 +15,7 @@ export class TicTacToe implements Game {
       this.disable=false;
     }
     
+    @log
     getGameElement(): HTMLElement {
         const div = document.createElement('div');
         div.classList.add('screen');
