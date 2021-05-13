@@ -8,6 +8,7 @@ socket.on('connection', function connection(ws) {
     ws.on('message', function incoming(message) {
       broadcast(message.toString());      
       console.log('received: %s', message);
+    
     });
   
     ws.send('connected');

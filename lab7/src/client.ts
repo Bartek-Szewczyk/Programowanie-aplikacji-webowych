@@ -9,6 +9,7 @@ socket.onmessage = function(event) {
   msg?.appendChild(item);
 };
 
+
 document.getElementById('send').addEventListener('click', () => {
     socket.send((<HTMLInputElement>document.getElementById('msg')).value)
 })
