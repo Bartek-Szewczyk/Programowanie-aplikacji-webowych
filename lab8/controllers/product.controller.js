@@ -8,15 +8,17 @@ exports.getAll = (req, res) => {
 
 exports.add = (req, res) => {
     console.log(req.body);
-    const product = new Product(req.body.name, req.body.description, req.body.price);
+    const product = new Product(req.body.id, req.body.name, req.body.description, req.body.price);
     products.push(product);
     res.status(201).send(product);
 }
 
 exports.update = (req, res) => {
-
+    console.log(req.body);
+    delete products[req.body.id]
 }
 
 exports.delete = (req, res) => {
     console.log(req.params.id);
+    products.splice(req.params.id, 1)
 }
