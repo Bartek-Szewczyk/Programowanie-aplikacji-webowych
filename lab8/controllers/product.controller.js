@@ -15,7 +15,14 @@ exports.add = (req, res) => {
 
 exports.update = (req, res) => {
     console.log(req.body);
+    for (let i = 0; i < products.length; i++) {
+        const pro = products[i];
+        if (pro.id == req.body.id) {
+            console.log(" p" + i);
+        }
+    }
     delete products[req.body.id]
+    products[req.body.id] = new Product(req.body.id, req.body.name, req.body.description, req.body.price);
 }
 
 exports.delete = (req, res) => {
