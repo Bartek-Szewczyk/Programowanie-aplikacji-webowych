@@ -1,10 +1,14 @@
 import { Cell } from "./Cell";
 import { Check} from "./Check";
+import { LocalStorage } from "./localstorage";
+import { SessionStorage } from "./sessionstorage";
 
 export class Board {
     cells: Cell[];
     currentSymbol: number;
     
+    sessionStorage: SessionStorage = new SessionStorage();
+    localStorage: LocalStorage = new LocalStorage();
 
     constructor(size: number, tablee: HTMLTableElement) {
         
@@ -38,6 +42,8 @@ export class Board {
                 this.currentSymbol = 1;
             }
         }
+        this.sessionStorage.setLastMove(this.cells);
+        this.localStorage.setLastGame(this.cells);
       new Check(this.cells);
       this.current(this.currentSymbol);
     };
