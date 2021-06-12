@@ -1,6 +1,8 @@
 import { disable, log } from "../decorator";
 import { Game } from "../game.model";
 import { Board } from "./Board";
+import { Cell } from "./Cell";
+
 
 @disable
 export class TicTacToe implements Game {
@@ -32,6 +34,9 @@ export class TicTacToe implements Game {
       input.id="num";
       const btn = document.createElement('button');
       btn.innerHTML="Graj"
+      const lastGame = <HTMLElement>document.createElement('label');
+       lastGame.innerHTML="ostatnia gra ";
+
 
       let current = document.createElement('h2');
       current.id="current";
@@ -57,6 +62,7 @@ export class TicTacToe implements Game {
       div.appendChild(rozmPlanszy);
       div.appendChild(input);
       div.appendChild(btn);
+      div.appendChild(lastGame);
       div.appendChild(table);
       
       
@@ -64,16 +70,27 @@ export class TicTacToe implements Game {
 
       btn?.addEventListener("click",()=>{
         table.innerHTML=" ";
-        num=parseInt(input.value) ;console.log(num);
+        num=parseInt(input.value)
         this.play(num, table)
       })
-      
+      lastGame.addEventListener("click", ()=>{
+        console.log(localStorage.getItem('lastGame'));
+        let bb=new Board(3, table);
+        let game = <string> localStorage.getItem('lastGame')
+        let lastGame: Array<Cell> = JSON.parse(game) 
+        bb.cells = lastGame;
+        for (let i = 0; i < lastGame.length; i++) {
+          const el = lastGame[i];
+          el.setCellValue(1)
+        }
+      })
       return div;
        
     }
     play(num:number, table: HTMLTableElement){
       console.log("play");
       new Board(num, table);
+      
     }
     
 }

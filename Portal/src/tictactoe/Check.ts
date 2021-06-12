@@ -1,3 +1,4 @@
+import { Board } from "./Board";
 import { Cell } from "./Cell";
 import { Win } from "./Win";
 
@@ -101,6 +102,8 @@ export class Check{
           
             continue;
         }
+        
+       
         
 
 
