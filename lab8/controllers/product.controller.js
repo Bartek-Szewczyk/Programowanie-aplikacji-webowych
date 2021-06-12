@@ -15,17 +15,15 @@ exports.add = (req, res) => {
 
 exports.update = (req, res) => {
     console.log(req.body);
-    for (let i = 0; i < products.length; i++) {
-        const pro = products[i];
-        if (pro.id == req.body.id) {
-            console.log(" p" + i);
-        }
-    }
-    delete products[req.body.id]
-    products[req.body.id] = new Product(req.body.id, req.body.name, req.body.description, req.body.price);
+    const updateProduct = new Product(req.body.id, req.body.name, req.body.description, req.body.price);
+    const productIndex = products.findIndex((product) => product.id === req.body.id);
+    products.splice(productIndex, 1, updateProduct);
+    res.status(200).send(updateProduct);
 }
 
 exports.delete = (req, res) => {
     console.log(req.params.id);
-    products.splice(req.params.id, 1)
+    const productIndex = products.findIndex((product) => product.id === req.param.id)
+    const deleted = products.splice(productIndex, 1)
+    res.status(200).send(deleted)
 }
