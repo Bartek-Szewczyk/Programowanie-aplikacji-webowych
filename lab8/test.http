@@ -27,3 +27,35 @@ content-type: application/json
     "price": 9000
 
 }
+
+
+
+
+
+###
+GET http://localhost:8080/category HTTP/1.1
+
+###
+
+POST http://localhost:8080/category HTTP/1.1
+content-type: application/json
+
+{
+    "id":1,
+    "name": "Komputery stacjonarne",
+    "quantity": 7
+}
+
+###
+DELETE http://localhost:8080/category/1 HTTP/1.1
+
+###
+PUT http://localhost:8080/category/ HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "name": "Laptopy",
+    "quantity": 15
+
+}
